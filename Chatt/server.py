@@ -47,8 +47,8 @@ def handle_client_connection(client: socket.socket) -> None:
                 break
             else:
                 broadcast(message)
-        except ConnectionResetError: # handles ungraceful disconnection
-            print(f'Unexpected Error: Connection to {client} not found.')
+        except ConnectionResetError:
+            print(f'Connection to {client} not found.')
             break
         except OSError: # Occurs primarily when using keyboard interupt to terminate program
             break
